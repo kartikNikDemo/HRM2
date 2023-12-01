@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmln:th="http://www.thymeLeaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<form class="form" action="/verify_otp" method="post">
+			<div class="container py-5 h-100">
+				<div class="row d-flex justify-content-center align-items-center h-100">
+					<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+						<div class="card shadow-2-strong" style="border-radius: 1rem;">
+							<div class="card-body p-5 text-center">
+
+								<h3 class="text-center">Verify OTP</h3>
+								<div class="alert alert-success" role="alert">
+									OTP send to Your email </div>
+									
+									
+										<div th:if="${session.message}">
+											<div class="alert alert-danger" role="alert">
+												<span th:text="${session.message}"></span>
+											</div>
+									
+										<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+									</div>
+								<input name="otp" required type="text" placeholder="enter your OTP "
+									class="form-control">
+								<button class="btn btn-warning mt-3" type="submit">Verify OTP</button>
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
+
+</body>
+
+</html>

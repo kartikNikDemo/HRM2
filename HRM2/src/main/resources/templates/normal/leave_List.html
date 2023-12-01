@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html  xmln:th="http://www.thymeLeaf.org" th:replace="normal/base::Layout(~{::section})"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+	<div class="card"  >
+		<div class="card-body">
+			
+			<div class=" text-center">
+			<h1>Leave List</h1>
+<div class="table-responsive">
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+							    <th scope="col">Sr No.</th>
+								<th scope="col">Leave ID</th>
+								<th scope="col">Emolyoee Name</th>
+								<th scope="col">Start Date</th>
+								<th scope="col">End Date</th>
+								<th scope="col">Leave Type</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="(a, i : ${leave})" >
+								 <td th:text="${i.index + 1}"></td>
+								<th scope="row" th:text="${a.leaveId}"></th>
+								<td th:text="${a.EmplyoeeName}">Mark</td>
+								<td th:text="${a.StartDate}">Otto</td>
+								<td th:text="${a.EndDate}">@mdo</td>
+								<td th:text="${a.LeaveType}">@mdo</td>
+								<td th:text="${a.description}">@mdo</td>
+							</tr>
+						
+						</tbody>
+					</table>
+					</div>
+			</div>
+			
+		</div>
+		</div>
+		
+	</section>
+
+</body>
+</html>

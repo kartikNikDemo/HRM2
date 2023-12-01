@@ -1,0 +1,156 @@
+package com.smart.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+@Entity
+public class Contact {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int cId;
+	private String Name;
+	private String secondName;
+	private String work;
+	private String email;
+	private String phone;
+	private String image;
+	@Column(length = 5000)
+	private String description;
+	private String department;
+	private String shiftTime;
+	private String Gender;
+	private String Hiredate;
+	
+	@ManyToOne
+	@JsonIgnore
+	private User user;
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "contact")
+	private List<Contact>  contact=new ArrayList<>(); 
+	
+
+	public Contact(int cId, String name, String secondName, String work, String email, String phone, String image,
+			String description, String department, String shiftTime, String gender, String hiredate, User user,
+			List<Contact> contact) {
+		super();
+		this.cId = cId;
+		Name = name;
+		this.secondName = secondName;
+		this.work = work;
+		this.email = email;
+		this.phone = phone;
+		this.image = image;
+		this.description = description;
+		this.department = department;
+		this.shiftTime = shiftTime;
+		Gender = gender;
+		Hiredate = hiredate;
+		this.user = user;
+		this.contact = contact;
+	}
+	public Contact() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public int getcId() {
+		return cId;
+	}
+	public void setcId(int cId) {
+		this.cId = cId;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public String getSecondName() {
+		return secondName;
+	}
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
+	}
+	public String getWork() {
+		return work;
+	}
+	public void setWork(String work) {
+		this.work = work;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public String getShiftTime() {
+		return shiftTime;
+	}
+	public void setShiftTime(String shiftTime) {
+		this.shiftTime = shiftTime;
+	}
+	public String getGender() {
+		return Gender;
+	}
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+	public String getHiredate() {
+		return Hiredate;
+	}
+	public void setHiredate(String hiredate) {
+		Hiredate = hiredate;
+	}
+	
+	
+	/*
+	 * @Override public String toString() { return "Contact [cId=" + cId + ", Name="
+	 * + Name + ", secondName=" + secondName + ", work=" + work + ", email=" + email
+	 * + ", phone=" + phone + ", image=" + image + ", description=" + description +
+	 * ", user=" + user + "]"; }
+	 */
+	
+
+}

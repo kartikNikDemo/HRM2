@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmln:th="http://www.thymeLeaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<section>
+		<div class="card">
+			<div class="card-body">
+
+				<h2 class="text-center">Add Attendance</h2>
+				<form  action="/user/process_attendance" method="post" th:object="${attendance}" >
+				
+					<div class="form-group ">
+						<label for="formGroupExampleInput">Emplyoee Name</label>
+						<input name="emplyoeeName" type="text" class="form-control " id="formGroupExampleInput" placeholder="Example input">
+					</div>
+					<div class="form-group">
+						<label for="formGroupExampleInput">Emplyoee Id</label>
+						<input name="emplyoeeId" type="text" class="form-control " id="formGroupExampleInput" placeholder="Example input">
+					</div>
+					<div class="form-row">
+					<div class="col">
+						<label for="formGroupExampleInput2">Date</label>
+						<input name="date" type="date" class="form-control addAttendance" id="formGroupExampleInput2" placeholder="Another input">
+					</div>
+					<div class="col">
+						<label for="formGroupExampleInput2">Login Time</label>
+						<input  name="signTime" type="time" class="form-control addAttendance" id="formGroupExampleInput2" placeholder="Another input">
+					</div>
+					<div class="col">
+						<label for="formGroupExampleInput2">Logout Time</label>
+						<input name="logOutTime" type="time" class="form-control addAttendance" id="formGroupExampleInput2" placeholder="Another input">
+					</div>
+					</div>
+					<div class="form-group">
+						<label for="formGroupExampleInput2">Place</label>
+						<input name="place" type="text" class="form-control " id="formGroupExampleInput2" placeholder="Another input">
+					</div>
+					
+					<div class="container text-center">
+					<button class="btn btn-outline-primary">Add Attendance</button>
+				</div>
+				</form>
+
+			</div>
+		</div>
+
+	</section>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmln:th="http://www.thymeLeaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="card">
+			<div class="card-body">
+
+				<div class=" text-center">
+					<h1>Project List</h1>
+					<div class="table-responsive">
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">Project Id</th>
+									<th scope="col">Project Title</th>
+									<th scope="col">Start Date</th>
+									<th scope="col">End Date</th>
+									<th scope="col">Delivery Date</th>
+									<th scope="col">Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="(a:${project})">
+									<th scope="row" th:text="${a.projectId}"></th>
+									<td th:text="${a.projectTitle}">Mark</td>
+									<td th:text="${a.startDate}">Otto</td>
+									<td th:text="${a.endDate}">@mdo</td>
+									<td th:text="${a.deliveryDate}">@mdo</td>
+									<td th:text="${a.Status}">@mdo</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+</body>
+
+</html>

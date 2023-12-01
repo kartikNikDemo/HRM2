@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" xmln:th="http://www.thymeLeaf.org" th:fragment="Layout(content)">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" href="" th:href="@{/css/style.css}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css"
+		integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="" th:src="@{/js/script.js}"></script>
+
+	<title th:text="${title}">Hello, world!</title>
+</head>
+
+<body>
+
+	<!--end navbar-->
+
+	<!--side bar-->
+	<div class="sidebar">
+		<img class="ml-4" th:src="@{/images/brightlink.jpg}">
+		<span onclick="toggleSidebar()" class="crossBtn">&times</span>
+		<!--<a  data-toggle="collapse" href="#collapseExample"  ><i class="fas fa-pen-nib mr-3"></i> Home</a>
+        <ul class="collapse" id="collapseExample">
+            <dd>Coffee</dd>
+            <dd>Tea</dd>
+            <dd>Milk</dd>
+          </ul>
+          //-----------------
+   EmplyoeeList  -->
+          
+          
+		<a href="#" th:href="@{/user/index}" class="item"><i class="fas fa-home mr-3"></i> Dashboard</a>
+		<a  data-toggle="collapse" href="#collapseEmplyoee"  ><i class="fas fa-users mr-3"></i></i> Emplyoee</a>
+		<ul class="collapse" id="collapseEmplyoee">
+			<dd><a href="#" th:href="@{/user/show_contact/0}" class="item"><i class="fas fa-pen-nib mr-3"></i>View Emplyoee</a></dd>
+			<dd><a href="#" th:href="@{/user/add_contact}" class="item"><i class="fas fa-pen-nib mr-3"></i>Add Emplyoee</a></dd>
+		</ul>
+		<a  data-toggle="collapse" href="#collapseDepartment"  ><i class="fas fa-building mr-3"></i></i> Department</a>
+        <ul class="collapse" id="collapseDepartment">
+            <dd><a href="#" th:href="@{/user/emplyoeeIt}" class="item">IT Emplyoe </a></dd>
+            <dd><a href="#" th:href="@{/user/emplyoeeSales}" class="item">Sales Emplyoe </a></dd>
+            <dd><a href="#" th:href="@{/user/emplyoeeMarketing}" class="item">Marketing Emplyoe </a></dd>
+           <dd><a href="#" th:href="@{/user/emplyoeeProduction}" class="item">Production Emplyoe </a></dd>
+           <dd> <a href="#" th:href="@{/user/emplyoeePurchase}" class="item">Purchase Emplyoe </a></dd>
+       </ul>
+		<a  data-toggle="collapse" href="#collapseAttendance"  ><i class="fas fa-clipboard mr-3"></i> Attendance</a>
+        <ul class="collapse" id="collapseAttendance">
+            <dd><a href="#" th:href="@{/user/addAttendance}" class="item">Add Attendance </a></dd>
+            <dd> <a href="#" th:href="@{/user/getAttendanceList}" class="item"> Attendance List </a></dd>
+          </ul>
+		
+		
+		<a  data-toggle="collapse" href="#collapseLeave"  ><i class="far fa-clock mr-3"></i> Leave</a>
+        <ul class="collapse" id="collapseLeave">
+            <dd> <a href="#" th:href="@{/user/add_leave}" class="item"><i class="fas fa-pen-nib  mr-3"></i>Add Leave </a></dd>
+            <dd><a href="#" th:href="@{/user/leave_list}" class="item"><i class="fas fa-pen-nib  mr-3"></i>Leave List </a></dd>
+          </ul>
+          
+	<a data-toggle="collapse" href="#collapseProject"><i class="fas fa-pen-nib mr-3"></i> Project</a>
+	<ul class="collapse" id="collapseProject">
+		<dd><a href="#" th:href="@{/user/addProject}" class="item"><i class="fas fa-pen-nib  mr-3"></i>Add Project </a></dd>
+		<dd><a href="#" th:href="@{/user/getProjectList}" class="item"><i class="fas fa-pen-nib mr-3"></i> Project List </a>
+		</dd>
+	</ul>
+	<a data-toggle="collapse" href="#collapsePayroll"><i class="fas fa-money-bill mr-3"></i></i> Payroll</a>
+	<ul class="collapse" id="collapsePayroll">
+		<dd> <a href="#" th:href="@{/user/getPayrollFrom}" class="item"><i class="fas fa-pen-nib mr-3"></i> Add Payroll </a>
+		</dd>
+		<dd><a href="#" th:href="@{/user/getpayrollList}" class="item"><i class="fas fa-pen-nib mr-3"></i> Payroll List </a>
+		</dd>
+	</ul>
+	    
+		<a href="#" th:href="@{/user/profile}" class="item"><i class="fas fa-user mr-3"></i>Your Profile</a>
+		<a href="#" th:href="@{/user/sendEmail}" class="item"><i class="fas fa-solid fa-envelope mr-3"></i></i>Send Email</a>
+		<a href="#" th:href="@{/user/changePassword}" class="item"><i class="fas fa-cog mr-3"></i>Setting</a>
+		
+		<div class="dividers"></div>
+	</div>
+
+	<!--content bar-->
+	<div class="content ">
+			<nav class=" navbar navbar-expand-lg navbar-dark  " style="background-color: #563d7c;" >
+		<a class="navbar-brand" href="#"><h4><i onclick="toggleSidebar()" class="fas fa-bars mt-4"></i><!--<span class="ml-3" th:text="${heading}"></span>--></h4></a>
+		
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto text-uppercasess">
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/home}" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<!-- <li class="nav-item active">
+        <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+      </li>-->
+				<li class="nav-item active">
+					<a class="nav-link" href="#"><span th:text="${user.name}"></span> <span
+							class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#" th:href="@{/logout}">Logout <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+		
+		<div th:if="${session.message}" class="container">
+			<div th:classappend="${'alert-'+session.message.type}" class="alert text-center" role="alert">
+				<span th:text="${session.message.content}"></span>
+			</div>
+			<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+		</div>
+		<div th:replace="${content}"></div>
+	</div>
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+
+	<!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html  xmln:th="http://www.thymeLeaf.org" th:replace="normal/base::Layout(~{::section})"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+	<div class="card mr-4"  >
+		<div class="card-body">
+			
+			<h2 class="text-center">Add Project</h2>
+			<form action="/user/process_project" method="post" th:object="${project}">
+				<div class="form-group ">
+						<label for="formGroupExampleInput">Project Title</label>
+						<input name="projectTitle" type="text" class="form-control " id="formGroupExampleInput" placeholder="Project Title">
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<label>Start Date</label>
+						<input name="startDate"  type="date" class="form-control" placeholder="Start Date">
+					</div>
+					<div class="col">
+						<label>End Date</label>
+						<input name="endDate" type="date" class="form-control" placeholder="End Date">
+					</div>
+					<div class="col">
+						<label>Delivery Date</label>
+						<input name="deliveryDate" type="date" class="form-control" placeholder="Delivery Date">
+					</div> 
+				</div>
+				
+				<div class="form-row">
+					<div class="col">
+						<label>Duration Of Month</label>
+						<input name="totalDuration" type="number" class="form-control" placeholder="Start Date">
+					</div>
+					<div class="col">
+						<label>Number Of Emplyoee</label>
+						<input name="NumberOfEmplyoee" type="number" class="form-control" placeholder="End Date">
+					</div>
+				<div class="col">
+						<label>Satus</label>
+						<input name="Status" type="text" class="form-control" placeholder="End Date">
+					</div>
+				</div>
+				<div>
+					<div class="form-group">
+						<label for="formGroupExampleInput">Descrption</label> <br>
+						<textarea name="Description" class="form-control " style="width: 100%;" ></textarea>
+				<!--	<input name="emplyoeeName" type="textarea" class="form-control " id="formGroupExampleInput" placeholder="Project Title">-->
+				</div>
+				</div>
+				<div class="container text-center">
+					<button class="btn btn-outline-primary">Add Project</button>
+				</div>
+			</form>
+		</div>
+		</div>
+		
+	</section>
+
+</body>
+</html>
